@@ -1,0 +1,69 @@
+body {
+  counter-reset: score; }
+
+.score:before {
+  content: "Score: " counter(score); }
+
+.target-input {
+  display: block; }
+  .target-input:checked {
+    counter-increment: score 10; }
+    .target-input:checked ~ .target-inner {
+      transform: rotateX(90deg); }
+
+.target-inner {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(red 50%, #fff 50%);
+  transition: all 0.1s ease-out; }
+
+.colorRing {
+  width: 240px;
+  height: 240px;
+  filter: blur(10px);
+  position: relative; }
+  .colorRing-inner {
+    background-color: #00ff0a;
+    display: block;
+    clip-path: circle(50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+.colorRing-inner:nth-child(0) {
+  width: 40px;
+  height: 40px;
+  filter: hue-rotate(0deg);
+  z-index: 5; }
+
+.colorRing-inner:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  filter: hue-rotate(72deg);
+  z-index: 4; }
+
+.colorRing-inner:nth-child(2) {
+  width: 120px;
+  height: 120px;
+  filter: hue-rotate(144deg);
+  z-index: 3; }
+
+.colorRing-inner:nth-child(3) {
+  width: 160px;
+  height: 160px;
+  filter: hue-rotate(216deg);
+  z-index: 2; }
+
+.colorRing-inner:nth-child(4) {
+  width: 200px;
+  height: 200px;
+  filter: hue-rotate(288deg);
+  z-index: 1; }
+
+.colorRing-inner:nth-child(5) {
+  width: 240px;
+  height: 240px;
+  filter: hue-rotate(360deg);
+  z-index: 0; }

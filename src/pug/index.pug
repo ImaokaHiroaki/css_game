@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+html(lang="ja")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title CSS GAME
+    link(rel="stylesheet", href="css/style.css")
+  body
+    p.score
+    .target
+      input(type="checkbox" name="target01").target-input#target01
+      label(for="target01").target-inner
+    .fireworks 
+      .sample
+      .colorRing
+        - for (var x = 0; x < 5; x++)
+          div.colorRing-inner
+    
