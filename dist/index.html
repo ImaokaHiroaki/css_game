@@ -9,13 +9,14 @@
   <body>
     <form>
       <input id="game-start" type="checkbox"/>
-      <label class="stage stage--op" for="game-start"><span class="title">花火職人</span><span class="lead">花火がいっぱい上がってくるのでクリックして夜空に花咲かせましょう。<br>クリックでスタート</span></label>
+      <label class="stage stage--op" for="game-start"><span class="title">花火職人</span><span class="lead">花火がいっぱい上がってくるので<span>クリックして夜空に</span><span>花咲かせましょう。</span></span><span class="start">クリックでスタート</span></label>
       <div class="stage stage--main">
         <div class="sky">
           <div class="stars"></div>
           <div class="stars2"></div>
           <input id="reset" type="reset"/>
           <div class="timeLimit">
+            <div class="timeLimit-label">タイムリミット</div>
             <div class="timeLimit-inner"></div>
           </div>
           <div>
@@ -440,7 +441,7 @@
           </div>
         </div>
       </div>
-      <label class="stage stage--end" for="reset">Fin.</label>
+      <label class="stage stage--end" for="reset">Fin.<br>クリックでリスタート</label>
     </form>
   </body>
 </html>
