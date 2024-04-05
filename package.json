@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-sass": "sass ./src/scss:./dist/css",
-    "build-pug": "pug ./src/pug --out ./dist/ --pretty",
+    "build-sass": "sass ./src/scss:./docs/css",
+    "build-pug": "pug ./src/pug --out ./docs/ --pretty",
     "build": "npm run build-sass & npm run build-pug",
-    "watch-pug": "pug ./src/pug --out ./dist/ --watch --pretty",
-    "watch-sass": "sass ./src/scss:./dist/css --watch"
+    "watch-pug": "pug ./src/pug --out ./docs/ --watch --pretty",
+    "watch-sass": "sass ./src/scss:./docs/css --watch"
   },
   "repository": {
     "type": "git",
