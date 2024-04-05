@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-sass": "node-sass ./src/scss --output ./dist/css --output-style compressed",
+    "build-sass": "sass ./src/scss:./dist/css",
     "build-pug": "pug ./src/pug --out ./dist/ --pretty",
     "build": "npm run build-sass & npm run build-pug",
     "watch-pug": "pug ./src/pug --out ./dist/ --watch --pretty",
-    "watch-sass": "node-sass ./src/scss --output ./dist/css --watch --output-style"
+    "watch-sass": "sass ./src/scss:./dist/css --watch"
   },
   "repository": {
     "type": "git",
@@ -22,14 +22,8 @@
   },
   "homepage": "https://github.com/ImaokaHiroaki/css_game#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.12",
-    "concurrently": "^5.3.0",
-    "gulp": "^4.0.2",
-    "gulp-sass": "^4.1.0",
     "pug": "^3.0.0",
-    "pug-cli": "^1.0.0-alpha6"
-  },
-  "dependencies": {
-    "node-sass": "^4.14.1"
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.74.1"
   }
 }

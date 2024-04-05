@@ -1,0 +1,230 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  min-height: 1000px;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  font-family: serif;
+}
+
+.particlesWrap {
+  pointer-events: none;
+  position: relative;
+}
+.particlesWrap .particles {
+  position: absolute;
+  width: 20px;
+  height: 300px;
+  background-color: #00ff0a;
+  opacity: 0;
+  left: 800px;
+  animation: particle01 0.7s ease-in-out infinite;
+}
+
+.particlesWrap.single .particles {
+  left: 50px;
+}
+
+.particlesWrap.singleRound .particles {
+  left: 400px;
+}
+
+.particlesWrap:nth-of-type(1) .particles:nth-of-type(1) {
+  transform: rotate(36deg);
+  animation-delay: 0.1s;
+}
+.particlesWrap:nth-of-type(1) .particles:nth-of-type(2) {
+  transform: rotate(72deg);
+  animation-delay: 0.1s;
+}
+.particlesWrap:nth-of-type(1) .particles:nth-of-type(3) {
+  transform: rotate(108deg);
+  animation-delay: 0.1s;
+}
+.particlesWrap:nth-of-type(1) .particles:nth-of-type(4) {
+  transform: rotate(144deg);
+  animation-delay: 0.1s;
+}
+.particlesWrap:nth-of-type(1) .particles:nth-of-type(5) {
+  transform: rotate(180deg);
+  animation-delay: 0.1s;
+}
+.particlesWrap:nth-of-type(1) .particles:nth-of-type(6) {
+  transform: rotate(216deg);
+  animation-delay: 0.1s;
+}
+.particlesWrap:nth-of-type(1) .particles:nth-of-type(7) {
+  transform: rotate(252deg);
+  animation-delay: 0.1s;
+}
+.particlesWrap:nth-of-type(1) .particles:nth-of-type(8) {
+  transform: rotate(288deg);
+  animation-delay: 0.1s;
+}
+.particlesWrap:nth-of-type(1) .particles:nth-of-type(9) {
+  transform: rotate(324deg);
+  animation-delay: 0.1s;
+}
+.particlesWrap:nth-of-type(1) .particles:nth-of-type(10) {
+  transform: rotate(360deg);
+  animation-delay: 0.1s;
+}
+.particlesWrap:nth-of-type(1) .particles:nth-of-type(11) {
+  transform: rotate(396deg);
+  animation-delay: 0.1s;
+}
+
+.particlesWrap:nth-of-type(2) .particles:nth-of-type(1) {
+  transform: rotate(36deg);
+  animation-delay: 0.2s;
+}
+.particlesWrap:nth-of-type(2) .particles:nth-of-type(2) {
+  transform: rotate(72deg);
+  animation-delay: 0.2s;
+}
+.particlesWrap:nth-of-type(2) .particles:nth-of-type(3) {
+  transform: rotate(108deg);
+  animation-delay: 0.2s;
+}
+.particlesWrap:nth-of-type(2) .particles:nth-of-type(4) {
+  transform: rotate(144deg);
+  animation-delay: 0.2s;
+}
+.particlesWrap:nth-of-type(2) .particles:nth-of-type(5) {
+  transform: rotate(180deg);
+  animation-delay: 0.2s;
+}
+.particlesWrap:nth-of-type(2) .particles:nth-of-type(6) {
+  transform: rotate(216deg);
+  animation-delay: 0.2s;
+}
+.particlesWrap:nth-of-type(2) .particles:nth-of-type(7) {
+  transform: rotate(252deg);
+  animation-delay: 0.2s;
+}
+.particlesWrap:nth-of-type(2) .particles:nth-of-type(8) {
+  transform: rotate(288deg);
+  animation-delay: 0.2s;
+}
+.particlesWrap:nth-of-type(2) .particles:nth-of-type(9) {
+  transform: rotate(324deg);
+  animation-delay: 0.2s;
+}
+.particlesWrap:nth-of-type(2) .particles:nth-of-type(10) {
+  transform: rotate(360deg);
+  animation-delay: 0.2s;
+}
+.particlesWrap:nth-of-type(2) .particles:nth-of-type(11) {
+  transform: rotate(396deg);
+  animation-delay: 0.2s;
+}
+
+.particlesWrap:nth-of-type(3) .particles:nth-of-type(1) {
+  transform: rotate(36deg);
+  animation-delay: 0.3s;
+}
+.particlesWrap:nth-of-type(3) .particles:nth-of-type(2) {
+  transform: rotate(72deg);
+  animation-delay: 0.3s;
+}
+.particlesWrap:nth-of-type(3) .particles:nth-of-type(3) {
+  transform: rotate(108deg);
+  animation-delay: 0.3s;
+}
+.particlesWrap:nth-of-type(3) .particles:nth-of-type(4) {
+  transform: rotate(144deg);
+  animation-delay: 0.3s;
+}
+.particlesWrap:nth-of-type(3) .particles:nth-of-type(5) {
+  transform: rotate(180deg);
+  animation-delay: 0.3s;
+}
+.particlesWrap:nth-of-type(3) .particles:nth-of-type(6) {
+  transform: rotate(216deg);
+  animation-delay: 0.3s;
+}
+.particlesWrap:nth-of-type(3) .particles:nth-of-type(7) {
+  transform: rotate(252deg);
+  animation-delay: 0.3s;
+}
+.particlesWrap:nth-of-type(3) .particles:nth-of-type(8) {
+  transform: rotate(288deg);
+  animation-delay: 0.3s;
+}
+.particlesWrap:nth-of-type(3) .particles:nth-of-type(9) {
+  transform: rotate(324deg);
+  animation-delay: 0.3s;
+}
+.particlesWrap:nth-of-type(3) .particles:nth-of-type(10) {
+  transform: rotate(360deg);
+  animation-delay: 0.3s;
+}
+.particlesWrap:nth-of-type(3) .particles:nth-of-type(11) {
+  transform: rotate(396deg);
+  animation-delay: 0.3s;
+}
+
+.particlesWrap:nth-of-type(4) .particles:nth-of-type(1) {
+  transform: rotate(36deg);
+  animation-delay: 0.4s;
+}
+.particlesWrap:nth-of-type(4) .particles:nth-of-type(2) {
+  transform: rotate(72deg);
+  animation-delay: 0.4s;
+}
+.particlesWrap:nth-of-type(4) .particles:nth-of-type(3) {
+  transform: rotate(108deg);
+  animation-delay: 0.4s;
+}
+.particlesWrap:nth-of-type(4) .particles:nth-of-type(4) {
+  transform: rotate(144deg);
+  animation-delay: 0.4s;
+}
+.particlesWrap:nth-of-type(4) .particles:nth-of-type(5) {
+  transform: rotate(180deg);
+  animation-delay: 0.4s;
+}
+.particlesWrap:nth-of-type(4) .particles:nth-of-type(6) {
+  transform: rotate(216deg);
+  animation-delay: 0.4s;
+}
+.particlesWrap:nth-of-type(4) .particles:nth-of-type(7) {
+  transform: rotate(252deg);
+  animation-delay: 0.4s;
+}
+.particlesWrap:nth-of-type(4) .particles:nth-of-type(8) {
+  transform: rotate(288deg);
+  animation-delay: 0.4s;
+}
+.particlesWrap:nth-of-type(4) .particles:nth-of-type(9) {
+  transform: rotate(324deg);
+  animation-delay: 0.4s;
+}
+.particlesWrap:nth-of-type(4) .particles:nth-of-type(10) {
+  transform: rotate(360deg);
+  animation-delay: 0.4s;
+}
+.particlesWrap:nth-of-type(4) .particles:nth-of-type(11) {
+  transform: rotate(396deg);
+  animation-delay: 0.4s;
+}
+
+@keyframes particle01 {
+  0% {
+    clip-path: circle(5px at 10px 140px);
+    filter: hue-rotate(0);
+  }
+  50% {
+    clip-path: circle(10px at 10px 100px);
+  }
+  95% {
+    clip-path: circle(3px at 10px 10px);
+    opacity: 1;
+  }
+  100% {
+    clip-path: circle(1px at 10px 10px);
+    filter: hue-rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=fire.css.map */

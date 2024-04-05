@@ -3,24 +3,444 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>CSS GAME</title>
+    <title>花火職人</title>
     <link rel="stylesheet" href="css/style.css"/>
   </head>
   <body>
-    <p class="score"></p>
-    <div class="target">
-      <input class="target-input" type="checkbox" name="target01" id="target01"/>
-      <label class="target-inner" for="target01"></label>
-    </div>
-    <div class="fireworks"> 
-      <div class="sample"></div>
-      <div class="colorRing">
-        <div class="colorRing-inner"></div>
-        <div class="colorRing-inner"></div>
-        <div class="colorRing-inner"></div>
-        <div class="colorRing-inner"></div>
-        <div class="colorRing-inner"></div>
+    <form>
+      <input id="game-start" type="checkbox"/>
+      <label class="stage stage--op" for="game-start"><span class="title">花火職人</span><span class="lead">花火がいっぱい上がってくるのでクリックして夜空に花咲かせましょう。<br>クリックでスタート</span></label>
+      <div class="stage stage--main">
+        <div class="sky">
+          <div class="stars"></div>
+          <div class="stars2"></div>
+          <input id="reset" type="reset"/>
+          <div class="timeLimit">
+            <div class="timeLimit-inner"></div>
+          </div>
+          <div>
+            <input class="target-input" id="target1" type="checkbox" name="target1"/>
+            <label class="target-fireworks" id="target-fireworks1" for="target1"></label>
+            <div class="fireworks" id="fireworks1"> 
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <input class="target-input" id="target2" type="checkbox" name="target2"/>
+            <label class="target-fireworks" id="target-fireworks2" for="target2"></label>
+            <div class="fireworks" id="fireworks2"> 
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <input class="target-input" id="target3" type="checkbox" name="target3"/>
+            <label class="target-fireworks" id="target-fireworks3" for="target3"></label>
+            <div class="fireworks" id="fireworks3"> 
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <input class="target-input" id="target4" type="checkbox" name="target4"/>
+            <label class="target-fireworks" id="target-fireworks4" for="target4"></label>
+            <div class="fireworks" id="fireworks4"> 
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <input class="target-input" id="target5" type="checkbox" name="target5"/>
+            <label class="target-fireworks" id="target-fireworks5" for="target5"></label>
+            <div class="fireworks" id="fireworks5"> 
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <input class="target-input" id="target6" type="checkbox" name="target6"/>
+            <label class="target-fireworks" id="target-fireworks6" for="target6"></label>
+            <div class="fireworks" id="fireworks6"> 
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <input class="target-input" id="target7" type="checkbox" name="target7"/>
+            <label class="target-fireworks" id="target-fireworks7" for="target7"></label>
+            <div class="fireworks" id="fireworks7"> 
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <input class="target-input" id="target8" type="checkbox" name="target8"/>
+            <label class="target-fireworks" id="target-fireworks8" for="target8"></label>
+            <div class="fireworks" id="fireworks8"> 
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <input class="target-input" id="target9" type="checkbox" name="target9"/>
+            <label class="target-fireworks" id="target-fireworks9" for="target9"></label>
+            <div class="fireworks" id="fireworks9"> 
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <input class="target-input" id="target10" type="checkbox" name="target10"/>
+            <label class="target-fireworks" id="target-fireworks10" for="target10"></label>
+            <div class="fireworks" id="fireworks10"> 
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+              <div class="particlesWrap">
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+                <div class="particles"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+      <label class="stage stage--end" for="reset">Fin.</label>
+    </form>
   </body>
 </html>

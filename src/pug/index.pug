@@ -1,18 +1,31 @@
+
 <!DOCTYPE html>
 html(lang="ja")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title CSS GAME
+    title 花火職人
     link(rel="stylesheet", href="css/style.css")
   body
-    p.score
-    .target
-      input(type="checkbox" name="target01").target-input#target01
-      label(for="target01").target-inner
-    .fireworks 
-      .sample
-      .colorRing
-        - for (var x = 0; x < 5; x++)
-          div.colorRing-inner
-    
+    form
+      
+      input(id="game-start" type="checkbox")
+      label(class="stage stage--op" for="game-start") <span class="title">花火職人</span><span class="lead">花火がいっぱい上がってくるのでクリックして夜空に花咲かせましょう。<br>クリックでスタート</span>
+      .stage.stage--main
+        .sky
+          .stars
+          .stars2
+          input(id="reset" type="reset")
+          .timeLimit
+            .timeLimit-inner
+          - for (var z = 0; z < 10; z++)
+            div
+              input(id=`target${z+1}` class="target-input" type="checkbox" name=`target${z+1}`)
+              label(class="target-fireworks" id=`target-fireworks${z+1}` for=`target${z+1}`)
+              
+              div(class="fireworks" id=`fireworks${z+1}`) 
+                - for (var y = 0; y < 3; y++)
+                  .particlesWrap
+                    - for (var x = 0; x < 10; x++)
+                      .particles
+      label(class="stage stage--end" for="reset") Fin.

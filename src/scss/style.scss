@@ -1,53 +1,312 @@
+@use "sass:math";
+
+$skyWidth: 1500px;
+$skyHeight: 1000px;
+$particleNum: 10;
+$particleWrapNum: 3;
+$particleDist: 300px;
+$fireworksNum: 10;
+$fireworksTargetRad: 30px;
+$particlesRad: 20px;
+$time: 20s;
+
 body {
-    counter-reset: score;
-}
-.score:before {
-  content: "Score: " counter(score);
-}
-.target {
-    &-input {
-        display: block;
-        &:checked {
-             counter-increment: score 10;
-             ~ .target-inner {
-                transform: rotateX(90deg);
-            }
-        }
-    }
-    &-inner {
-        display: block;
-        width: 100px;
-        height: 100px;
-        background: linear-gradient(red 50%, #fff 50%);
-        transition: all 0.1s ease-out;
-    }
+  width: 100vw;
+  height: 100vh;
+  min-height: $skyHeight;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  font-family: serif;
 }
 
-//花火
-$elements: 5;
-$diff: 40px;
-.colorRing {
-    width: $diff * ($elements+1);
-    height: $diff * ($elements+1);
-    filter: blur(10px);
-    position: relative;
-    
-    &-inner {
-        background-color: #00ff0a;
-        display: block;
-        clip-path: circle(50%);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform:translate(-50%, -50%);
-    }
+#reset {
+  display: none;
 }
 
-@for $i from 0 through $elements {
-    .colorRing-inner:nth-child(#{$i}) {
-        width: ($i+1) * $diff;
-        height: ($i+1) * $diff;
-        filter: hue-rotate(360deg / $elements * $i);
-        z-index: $elements - $i;
+.stage {
+  position: absolute;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  min-height: $skyHeight;
+
+  &--op {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    color: #fff;
+
+    .title {
+      display: block;
+      font-weight: bold;
+      font-size: 50px;
     }
+
+    .lead {
+      display: block;
+      text-align: center;
+      font-size: 20px;
+      line-height: 1.5;
+    }
+  }
+
+  &--main {
+    display: none;
+  }
+
+  &--end {
+    display: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 36px;
+  }
+}
+
+#game-start {
+  display: none;
+
+  &:checked {
+    ~.stage--op {
+      display: none;
+    }
+
+    ~.stage--main {
+      display: block;
+
+      .timeLimit-inner {
+        animation: timeLimit-gauge $time linear;
+      }
+    }
+
+    ~.stage--end {
+      display: flex;
+      min-height: $skyHeight;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      animation: game-end-animation $time;
+    }
+  }
+}
+
+.timeLimit {
+  position: relative;
+  width: 300px;
+  height: 30px;
+  border: 1px solid #fff;
+  float: right;
+
+  &-inner {
+    position: absolute;
+    width: 0px;
+    height: 30px;
+    background-color: #1c1cd6;
+    opacity: 0.7;
+  }
+
+  &:before {
+    content: "タイムリミット";
+    position: absolute;
+    transform: translateX(-110%);
+    color: #fff;
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+
+@function multiple-box-shadow($n) {
+  $value: "#{random(1500)}px #{random(1000)}px #FFF";
+
+  @for $i from 2 through $n {
+    $value: "#{$value} , #{random(1500)}px #{random(1000)}px #FFF";
+  }
+
+  @return unquote($value);
+}
+
+.sky {
+  position: relative;
+  width: $skyWidth;
+  height: $skyHeight;
+  margin: 0 auto;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
+
+  .stars {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: multiple-box-shadow(100);
+  }
+
+  .stars2 {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: multiple-box-shadow(50);
+  }
+
+  .fireworks {
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+    transform: translate(0 -50px);
+  }
+
+  .target-fireworks {
+    position: absolute;
+    display: block;
+    width: $fireworksTargetRad;
+    height: $fireworksTargetRad;
+    background-color: #00ff0a;
+    top: $fireworksTargetRad;
+    border-radius: math.div($fireworksTargetRad, 2);
+    z-index: 10;
+    cursor: pointer;
+    box-shadow: inset -2px -2px rgba(0, 0, 0, 0.4);
+  }
+
+  .target-input {
+    display: none;
+
+    &:checked {
+
+      ~.target-fireworks {
+        pointer-events: none;
+        opacity: 0;
+        cursor: unset;
+        transition: opacity 0.05s ease-in;
+      }
+
+      ~.fireworks .particlesWrap .particles {
+        animation-name: particle01;
+      }
+    }
+  }
+}
+
+.particlesWrap {
+  pointer-events: none;
+  position: relative;
+  background-color: red;
+
+  .particles {
+    position: absolute;
+    width: $particlesRad;
+    height: $particleDist;
+    left: -1 * math.div($particlesRad, 2);
+    background-color: #00ff0a;
+    opacity: 0;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@for $i from 1 through ($fireworksNum + 1) {
+  $randomLeft: math.random(math.div($skyWidth, 1px));
+  $randomSec: random(10);
+  $randomSpeed: random(10);
+  $randomColor: random(360) + deg;
+  $randomScale: math.div(random(3), 2);
+
+  #target-fireworks#{$i} {
+    left: calc(#{$randomLeft}px - #{math.div($fireworksTargetRad, 2)});
+    animation: fireworksTargetPos $randomSpeed + 6s linear infinite;
+    animation-delay: $i * $randomSec * -1.7s;
+    filter: hue-rotate($randomColor);
+    transform: scale($randomScale);
+  }
+
+  #fireworks#{$i} {
+    left: calc(#{$randomLeft}px - #{math.div($particlesRad, 2)});
+    animation: fireworksPos $randomSpeed + 6s linear infinite;
+    animation-delay: $i * $randomSec * -1.7s;
+  }
+}
+
+@for $j from 1 through ($particleWrapNum + 1) {
+  .particlesWrap:nth-of-type(#{$j}) {
+    @for $i from 1 through ($particleNum + 1) {
+      .particles:nth-of-type(#{$i}) {
+        transform: rotate(math.div($i * 360deg, $particleNum));
+        animation-delay: $j * 0.1s;
+      }
+    }
+  }
+}
+
+@keyframes game-end-animation {
+  0% {
+    visibility: hidden;
+    z-index: -1;
+  }
+
+  99% {
+    visibility: hidden;
+    z-index: -1;
+  }
+
+  100% {
+    visibility: visible;
+    z-index: 100;
+  }
+}
+
+@keyframes timeLimit-gauge {
+  0% {
+    width: 300px;
+    background-color: #1c1cd6;
+  }
+
+  50% {
+    background-color: #1c1cd6;
+  }
+
+  100% {
+    width: 0px;
+    background-color: #ff5656;
+  }
+}
+
+@keyframes fireworksPos {
+  0% {
+    top: $skyHeight;
+  }
+
+  100% {
+    top: -50px - math.div($particleDist, 2);
+  }
+}
+
+@keyframes fireworksTargetPos {
+  0% {
+    top: $skyHeight + math.div($particleDist, 2) - math.div($fireworksTargetRad, 2);
+  }
+
+  100% {
+    top: -50px - math.div($fireworksTargetRad, 2);
+  }
+}
+
+@keyframes particle01 {
+  0% {
+    clip-path: circle(5px at math.div($particlesRad, 2) math.div($particleDist, 2) - math.div($particlesRad, 2));
+    filter: hue-rotate(0);
+  }
+
+  50% {
+    clip-path: circle(10px at math.div($particlesRad, 2) math.div($particleDist, 2) - 50px);
+  }
+
+  95% {
+    clip-path: circle(3px at math.div($particlesRad, 2) 10px);
+    opacity: 1;
+  }
+
+  100% {
+    clip-path: circle(1px at math.div($particlesRad, 2) math.div($particlesRad, 2));
+    filter: hue-rotate(360deg);
+    opacity: 0;
+  }
 }
