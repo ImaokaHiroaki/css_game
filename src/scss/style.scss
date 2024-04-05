@@ -1,7 +1,7 @@
 @use "sass:math";
 
-$skyWidth: 1500px;
-$skyHeight: 1000px;
+$skyWidth: 100vw;
+$skyHeight: 100vh;
 $particleNum: 10;
 $particleWrapNum: 3;
 $particleDist: 300px;
@@ -13,6 +13,7 @@ $time: 20s;
 body {
   width: 100vw;
   height: 100vh;
+  margin: 0;
   min-height: $skyHeight;
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   font-family: serif;
@@ -91,11 +92,12 @@ body {
 }
 
 .timeLimit {
-  position: relative;
+  position: absolute;
   width: 300px;
   height: 30px;
   border: 1px solid #fff;
-  float: right;
+  right: 20px;
+  top: 20px;
 
   &-inner {
     position: absolute;
@@ -116,10 +118,10 @@ body {
 }
 
 @function multiple-box-shadow($n) {
-  $value: "#{random(1500)}px #{random(1000)}px #FFF";
+  $value: "#{random(100)}vw #{random(1000)}vh #FFF";
 
   @for $i from 2 through $n {
-    $value: "#{$value} , #{random(1500)}px #{random(1000)}px #FFF";
+    $value: "#{$value} , #{random(100)}vw #{random(100)}vh #FFF";
   }
 
   @return unquote($value);
@@ -204,14 +206,14 @@ body {
 }
 
 @for $i from 1 through ($fireworksNum + 1) {
-  $randomLeft: math.random(math.div($skyWidth, 1px));
+  $randomLeft: math.random(math.div($skyWidth, 1vw));
   $randomSec: random(10);
   $randomSpeed: random(10);
   $randomColor: random(360) + deg;
   $randomScale: math.div(random(3), 2);
 
   #target-fireworks#{$i} {
-    left: calc(#{$randomLeft}px - #{math.div($fireworksTargetRad, 2)});
+    left: calc(#{$randomLeft}vw - #{math.div($fireworksTargetRad, 2)});
     animation: fireworksTargetPos $randomSpeed + 6s linear infinite;
     animation-delay: $i * $randomSec * -1.7s;
     filter: hue-rotate($randomColor);
@@ -219,7 +221,7 @@ body {
   }
 
   #fireworks#{$i} {
-    left: calc(#{$randomLeft}px - #{math.div($particlesRad, 2)});
+    left: calc(#{$randomLeft}vw - #{math.div($particlesRad, 2)});
     animation: fireworksPos $randomSpeed + 6s linear infinite;
     animation-delay: $i * $randomSec * -1.7s;
   }
@@ -281,7 +283,7 @@ body {
 
 @keyframes fireworksTargetPos {
   0% {
-    top: $skyHeight + math.div($particleDist, 2) - math.div($fireworksTargetRad, 2);
+    top: calc($skyHeight + math.div($particleDist, 2) - math.div($fireworksTargetRad, 2));
   }
 
   100% {
